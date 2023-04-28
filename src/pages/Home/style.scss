@@ -1,0 +1,20 @@
+#home {
+  color: #413d3d;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  #welcome {
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    > span {
+      display: inline-block;
+      color: #908888;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 22px;
+      width: 310px;
+    }
+  }
+}

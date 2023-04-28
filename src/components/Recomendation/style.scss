@@ -1,0 +1,22 @@
+#recommendation-filter {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  overflow-x: auto;
+
+  .filter-item {
+    background-color: #ffffff;
+    padding: 14px;
+    font-size: 12px;
+    border-radius: 14px;
+    white-space: nowrap;
+    border: none;
+  }
+
+  .checked {
+    background-color: #ff4f4f;
+    color: #ffffff;
+  }
+}
+#recommendation-results {
+}

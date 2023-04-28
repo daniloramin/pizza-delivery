@@ -1,0 +1,33 @@
+#search,
+#search {
+  background-color: #ffffff;
+  height: 48px;
+  border-radius: 14px;
+  color: #dad1d1;
+  border: 1px solid #eae9e9;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px;
+
+  > input {
+    flex-grow: 1;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    &::placeholder {
+      color: #dad1d1;
+    }
+  }
+
+  > button {
+    border: none;
+    background-color: transparent;
+    color: #dad1d1;
+  }
+}

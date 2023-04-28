@@ -1,0 +1,40 @@
+nav {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+
+  height: 74px;
+
+  background-color: #ffffff;
+
+  a {
+    --size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--size);
+    width: var(--size);
+    color: #dad1d1;
+  }
+}
+
+.active {
+  position: relative;
+  color: #ff4f4f;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    width: 100%;
+    height: 20px;
+    border-radius: 8px;
+    background-color: #ff4f4f;
+  }
+}
