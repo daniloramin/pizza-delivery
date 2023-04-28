@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./style.scss";
+import { RecommendationFilter } from "./RecommendationFilter";
+import { RecommendationResults } from "./RecommendationResults";
 
 const data = [
   { id: 1, name: "All Food", checked: false },
@@ -13,7 +14,6 @@ const data = [
 
 export const Recomendation = () => {
   const [filterItems, setFilterItems] = useState(data);
-  console.log("renderizou");
 
   function checkItem(filterItem) {
     const newItems = filterItems.map((item) =>
@@ -27,23 +27,8 @@ export const Recomendation = () => {
 
   return (
     <>
-      <div id="recommendation-filter">
-        {filterItems.map((item) => {
-          return (
-            <button
-              key={item.id}
-              onClick={() => {
-                checkItem(item);
-              }}
-              className={`filter-item ${item.checked && "checked"}`}
-              disabled={item.checked ? true : false}
-            >
-              {item.name}
-            </button>
-          );
-        })}
-      </div>
-      <div id="recommendation-results">recommendation results</div>
+      <RecommendationFilter filterItems={filterItems} checkItem={checkItem} />
+      <RecommendationResults />
     </>
   );
 };
