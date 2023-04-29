@@ -25,46 +25,6 @@
         border-radius: 50%;
         background-color: #f6e7e7;
       }
-
-      .result-title {
-        color: #413d3d;
-        font-size: 14px;
-        letter-spacing: 1px;
-      }
-
-      .result-time {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        margin: 8px 0px;
-
-        color: #908888;
-        font-size: 12px;
-        letter-spacing: 1px;
-
-        .clock {
-          color: #dad1d1;
-          font-size: 14px;
-        }
-      }
-
-      .price {
-        color: #ff4f4f;
-        font-size: 20px;
-      }
-
-      .evaluation {
-        display: flex;
-        gap: 6px;
-        margin: 14px 0px;
-        color: #dad1d1;
-        font-size: 12px;
-
-        > svg {
-          color: #ff9540;
-        }
-      }
     }
 
     .heart {
