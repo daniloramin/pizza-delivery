@@ -14,15 +14,19 @@ export const Home = () => {
 
   return (
     <div id="home">
-      <Header />
-      <div id="welcome">
-        <h2 className="title">Hi Victoria West</h2>
-        <span>
-          Find the most delicious pizza and have it deliverid to your door
-        </span>
-      </div>
-      <SearchField onSetSearch={onSetSearch} />
-      {search.length === 0 && <Recomendation />}
+      <Header search={search} onSetSearch={onSetSearch} />
+      {search.length === 0 && (
+        <>
+          <div id="welcome">
+            <h2 className="title">Hi Victoria West</h2>
+            <span>
+              Find the most delicious pizza and have it deliverid to your door
+            </span>
+          </div>
+          <SearchField onSetSearch={onSetSearch} />
+          <Recomendation />
+        </>
+      )}
       {search.length > 0 && <SearchResult />}
     </div>
   );

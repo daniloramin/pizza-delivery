@@ -55,7 +55,6 @@ const storesData = [
 export const SearchResult = () => {
   const [filters, setFilters] = useState(filtersData);
   const stores = useRef(storesData);
-  console.log(stores);
 
   function selectFilter(filter) {
     const newFilters = filters.map((f) => {
