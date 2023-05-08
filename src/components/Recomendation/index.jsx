@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { RecommendationFilter } from "./RecommendationFilter";
+import { ScrollBarFilters } from "../ScrollBarFilters";
 import { RecommendationResults } from "./RecommendationResults";
 
 const data = [
-  { id: 1, name: "All Food", checked: false },
-  { id: 2, name: "Pizza", checked: true },
-  { id: 3, name: "Burger", checked: false },
-  { id: 4, name: "Snack", checked: false },
-  { id: 5, name: "Sushi", checked: false },
-  { id: 6, name: "Breakfast", checked: false },
-  { id: 7, name: "Dessert", checked: false },
+  { id: 1, filter: "All Food", checked: false },
+  { id: 2, filter: "Pizza", checked: true },
+  { id: 3, filter: "Burger", checked: false },
+  { id: 4, filter: "Snack", checked: false },
+  { id: 5, filter: "Sushi", checked: false },
+  { id: 6, filter: "Breakfast", checked: false },
+  { id: 7, filter: "Dessert", checked: false },
 ];
 
 export const Recomendation = () => {
@@ -27,7 +27,7 @@ export const Recomendation = () => {
 
   return (
     <>
-      <RecommendationFilter filterItems={filterItems} checkItem={checkItem} />
+      <ScrollBarFilters filterItems={filterItems} checkItem={checkItem} />
       <RecommendationResults />
     </>
   );

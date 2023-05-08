@@ -60,16 +60,18 @@ export const RecommendationResults = () => {
 
               <div className="result-image"></div>
 
-              <Title type="h3">{pizza.name}</Title>
+              <div className="principal">
+                <Title type="h3">{pizza.name}</Title>
 
-              <SubInfo>
-                <BsFillClockFill
-                  style={{ fontSize: "14px", color: "#DAD1D1" }}
-                />
-                {pizza.cookingTime}
-              </SubInfo>
+                <SubInfo>
+                  <BsFillClockFill
+                    style={{ fontSize: "14px", color: "#DAD1D1" }}
+                  />
+                  {pizza.cookingTime}
+                </SubInfo>
 
-              <Price>${pizza.price}</Price>
+                <Price>${pizza.price}</Price>
+              </div>
 
               <Evaluation value={pizza.evaluation} />
             </div>

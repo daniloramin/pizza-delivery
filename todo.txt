@@ -1,0 +1,3 @@
+criar um custom hook dentro de reducers/stores/index.js que retorna todas as funcionalidades do reducer.
+
+pegar todas as funcionalidades do StoreReducer e passar para o context dentro do Outlet no Root component.

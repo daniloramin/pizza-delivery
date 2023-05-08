@@ -1,6 +1,6 @@
 import "./style.scss";
 
-export const RecommendationFilter = ({ filterItems, checkItem }) => {
+export const ScrollBarFilters = ({ filterItems, checkItem }) => {
   return (
     <div id="recommendation-filter">
       {filterItems.map((item) => {
@@ -13,7 +13,7 @@ export const RecommendationFilter = ({ filterItems, checkItem }) => {
             className={`filter-item ${item.checked && "checked"}`}
             disabled={item.checked ? true : false}
           >
-            {item.name}
+            {item.filter}
           </button>
         );
       })}

@@ -168,48 +168,56 @@
       }
     }
 
-    > .result-stores-item {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 250px;
+    > a {
+      text-decoration: none;
 
-      background-color: #ffffff;
-      border-radius: 14px;
-      padding: 14px;
-      gap: 14px;
+      > .result-stores-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 250px;
 
-      > div.store-logo {
-        background-color: #f6e7e7;
-        height: 149px;
+        background-color: #ffffff;
         border-radius: 14px;
-      }
+        padding: 14px;
+        gap: 14px;
 
-      > div.store-info {
-        > div.store-title {
-          display: flex;
-
-          > h2 {
-            flex-grow: 1;
-            font-size: 14px;
-            color: #413d3d;
-          }
-
-          > span.result-store-score {
-            color: #dad1d1;
-            font-size: 12px;
-
-            svg {
-              color: #ff9540;
-              font-size: 12px;
-            }
-          }
+        > div.store-logo {
+          background-color: #f6e7e7;
+          height: 149px;
+          border-radius: 14px;
         }
 
-        > div.store-order-infos {
+        > div.store-info {
           display: flex;
-          align-items: center;
-          gap: 14px;
+          flex-direction: column;
+          gap: 8px;
+
+          > div.store-title {
+            display: flex;
+
+            > h2 {
+              flex-grow: 1;
+              font-size: 14px;
+              color: #413d3d;
+            }
+
+            > span.result-store-score {
+              color: #dad1d1;
+              font-size: 12px;
+
+              svg {
+                color: #ff9540;
+                font-size: 12px;
+              }
+            }
+          }
+
+          > div.store-order-infos {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+          }
         }
       }
     }

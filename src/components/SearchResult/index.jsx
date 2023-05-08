@@ -10,6 +10,8 @@ import { BsFillClockFill, BsFillStarFill } from "react-icons/bs";
 import { Title } from "../Title";
 import { SubInfo } from "../SubInfo";
 
+import { useOutletContext, Link } from "react-router-dom";
+
 const filtersData = [
   {
     id: 1,
@@ -54,7 +56,7 @@ const storesData = [
 
 export const SearchResult = () => {
   const [filters, setFilters] = useState(filtersData);
-  const stores = useRef(storesData);
+  const { stores } = useOutletContext();
 
   function selectFilter(filter) {
     const newFilters = filters.map((f) => {
@@ -116,41 +118,43 @@ export const SearchResult = () => {
           <span>See More</span>
         </div>
 
-        {stores.current.map((store) => {
+        {stores.map((store) => {
           return (
-            <div key={store.id} className="result-stores-item">
-              <div className="store-logo"></div>
+            <Link key={store.id} to={`stores/${store.id}`}>
+              <div className="result-stores-item">
+                <div className="store-logo"></div>
 
-              <div className="store-info">
-                <div className="store-title">
-                  <Title type="h2">{store.name}</Title>
+                <div className="store-info">
+                  <div className="store-title">
+                    <Title type="h2">{store.name}</Title>
 
-                  <span className="result-store-score">
-                    {store.evaluation} <BsFillStarFill />
-                  </span>
-                </div>
+                    <span className="result-store-score">
+                      {store.evaluation} <BsFillStarFill />
+                    </span>
+                  </div>
 
-                <p>
-                  <SubInfo>{store.category}</SubInfo>
-                </p>
+                  <p>
+                    <SubInfo>{store.category}</SubInfo>
+                  </p>
 
-                <div className="store-order-infos">
-                  <SubInfo>
-                    <BsFillClockFill
-                      style={{ fontSize: "14px", color: "#DAD1D1" }}
-                    />{" "}
-                    Within {store.coockingTIme}
-                  </SubInfo>
+                  <div className="store-order-infos">
+                    <SubInfo>
+                      <BsFillClockFill
+                        style={{ fontSize: "14px", color: "#DAD1D1" }}
+                      />{" "}
+                      Within {store.coockingTIme}
+                    </SubInfo>
 
-                  <SubInfo>
-                    <TbDiscount2
-                      style={{ fontSize: "18px", color: "#DAD1D1" }}
-                    />{" "}
-                    {store.discount}
-                  </SubInfo>
+                    <SubInfo>
+                      <TbDiscount2
+                        style={{ fontSize: "18px", color: "#DAD1D1" }}
+                      />{" "}
+                      {store.discount}
+                    </SubInfo>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
