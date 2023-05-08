@@ -11,6 +11,7 @@ import { Evaluation } from "../../components/Evaluation";
 import { ScrollBarFilters } from "../../components/ScrollBarFilters";
 import { useState } from "react";
 import { Price } from "../../components/Price";
+import { FoodModal } from "../../components/FoodModal";
 
 const dataPizzeria = [
   {
@@ -85,6 +86,8 @@ export const Store = () => {
   const [store] = getOne(id);
 
   const [filters, setFilters] = useState(dataPizzeria);
+  const [showModal, setShowModal] = useState(false);
+  const [foodClicked, setFoodClicked] = useState(null);
 
   function checkItem(item) {
     const newItems = filters.map((filter) =>
@@ -94,6 +97,10 @@ export const Store = () => {
     );
 
     setFilters(newItems);
+  }
+
+  function onClickFood(value) {
+    setFoodClicked(value);
   }
 
   return (
@@ -137,7 +144,14 @@ export const Store = () => {
                     <div className="food-category-items">
                       {item.foods.map((food) => {
                         return (
-                          <div className="food-item" key={food.id}>
+                          <div
+                            className="food-item"
+                            key={food.id}
+                            onClick={() => {
+                              setShowModal(true);
+                              setFoodClicked(food);
+                            }}
+                          >
                             <div className="food-image"></div>
 
                             <div className="food-content">
@@ -156,6 +170,12 @@ export const Store = () => {
               </div>
             );
           })}
+          {showModal && (
+            <FoodModal
+              closeModal={() => setShowModal(false)}
+              food={foodClicked}
+            />
+          )}
         </div>
       </div>
     </div>
