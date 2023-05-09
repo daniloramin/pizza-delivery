@@ -5,6 +5,7 @@ import "./style.scss";
 import { FiArrowLeft, FiHeart } from "react-icons/fi";
 import { BsFillClockFill, BsFillHandThumbsUpFill } from "react-icons/bs";
 import { Evaluation } from "../Evaluation";
+import { Price } from "../Price";
 
 export const FoodModal = ({ closeModal, food }) => {
   return (
@@ -38,7 +39,25 @@ export const FoodModal = ({ closeModal, food }) => {
           <SubInfo>{food.description}</SubInfo>
         </div>
 
-        <div className="food-ingredients">Food ingredients</div>
+        <div className="food-ingredients">
+          <Title type="h3">Ingredients</Title>
+
+          <div className="ingredient-items">
+            {food.ingredients.map((ingredient) => {
+              return (
+                <div key={ingredient} className="ingredient-item">
+                  {ingredient}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="price-cart">
+          <Price>${food.price}</Price>
+
+          <button className="add-to-cart">Add to cart</button>
+        </div>
       </div>
     </div>
   );
