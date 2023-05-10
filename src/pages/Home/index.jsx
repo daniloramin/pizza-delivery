@@ -3,18 +3,17 @@ import { Header } from "../../components/Header";
 import { SearchField } from "../../components/SearchField";
 import { Recomendation } from "../../components/Recomendation";
 import { SearchResult } from "../../components/SearchResult";
+
 import { useState } from "react";
 
-export const Home = () => {
-  const [search, setSearch] = useState("");
+import { useOutletContext } from "react-router-dom";
 
-  function onSetSearch(text) {
-    setSearch(text);
-  }
+export const Home = () => {
+  const { search, setSearch } = useOutletContext();
 
   return (
     <div id="home">
-      <Header search={search} onSetSearch={onSetSearch} />
+      <Header />
       {search.length === 0 && (
         <>
           <div id="welcome">
@@ -23,7 +22,7 @@ export const Home = () => {
               Find the most delicious pizza and have it deliverid to your door
             </span>
           </div>
-          <SearchField onSetSearch={onSetSearch} />
+          <SearchField onSetSearch={(text) => setSearch(text)} />
           <Recomendation />
         </>
       )}
