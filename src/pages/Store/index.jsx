@@ -99,10 +99,6 @@ export const Store = () => {
     setFilters(newItems);
   }
 
-  function onClickFood(value) {
-    setFoodClicked(value);
-  }
-
   return (
     <div id="store">
       <Link className="back-button" to={-1}>
