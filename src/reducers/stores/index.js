@@ -15,6 +15,7 @@ export const useStores = () => {
           foods: [
             {
               id: 10001,
+              favorite: true,
               category: "Pizza",
               name: "Greek Pizza",
               cookingTime: "25 min",
@@ -26,6 +27,7 @@ export const useStores = () => {
             },
             {
               id: 10002,
+              favorite: false,
               category: "Pizza",
               name: "Bacon Pizza",
               cookingTime: "40 min",
@@ -51,6 +53,7 @@ export const useStores = () => {
             {
               id: 10004,
               category: "Pizza",
+              favorite: false,
               name: "Mediterranean Pizza",
               cookingTime: "30 min",
               kcal: "135 kcal",
@@ -78,6 +81,7 @@ export const useStores = () => {
           foods: [
             {
               id: 10005,
+              favorite: true,
               category: "Pizza",
               name: "Margherita pizza",
               cookingTime: "40 min",
@@ -89,6 +93,7 @@ export const useStores = () => {
             },
             {
               id: 10006,
+              favorite: true,
               category: "Pizza",
               name: "Portuguese Pizza",
               cookingTime: "60 min",
@@ -118,6 +123,7 @@ export const useStores = () => {
           foods: [
             {
               id: 10006,
+              favorite: true,
               category: "Pizza",
               name: "Mozzarella Pizza",
               cookingTime: "20 min",
@@ -136,6 +142,7 @@ export const useStores = () => {
           foods: [
             {
               id: 10008,
+              favorite: false,
               category: "Pizza",
               name: "Mediterranean Pizza",
               cookingTime: "30 min",

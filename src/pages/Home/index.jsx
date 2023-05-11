@@ -4,8 +4,6 @@ import { SearchField } from "../../components/SearchField";
 import { Recomendation } from "../../components/Recomendation";
 import { SearchResult } from "../../components/SearchResult";
 
-import { useState } from "react";
-
 import { useOutletContext } from "react-router-dom";
 
 export const Home = () => {
