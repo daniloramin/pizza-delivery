@@ -2,6 +2,7 @@ import { SubInfo } from "../SubInfo";
 import { Title } from "../Title";
 import "./style.scss";
 
+import { FaHeart } from "react-icons/fa";
 import { FiArrowLeft, FiHeart } from "react-icons/fi";
 import { BsFillClockFill, BsFillHandThumbsUpFill } from "react-icons/bs";
 import { Evaluation } from "../Evaluation";
@@ -15,7 +16,9 @@ export const FoodModal = ({ closeModal, food }) => {
           <FiArrowLeft />
         </button>
         <span>{food.category}</span>
-        <FiHeart />
+
+        {food.favorite && <FaHeart />}
+        {!food.favorite && <FiHeart />}
       </header>
 
       <div className="food-content">

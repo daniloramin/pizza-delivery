@@ -65,7 +65,11 @@ export const Store = () => {
         <div className="store-foods">
           {filters.map((item) => {
             return (
-              <div key={item.id} className="foods-category">
+              <div
+                key={item.id}
+                id={`${item.filter}`}
+                className="foods-category"
+              >
                 {item.foods.length > 0 && (
                   <>
                     <Title type="h2">{item.filter}</Title>
@@ -99,14 +103,12 @@ export const Store = () => {
               </div>
             );
           })}
-          {showModal && (
-            <FoodModal
-              closeModal={() => setShowModal(false)}
-              food={foodClicked}
-            />
-          )}
         </div>
       </div>
+
+      {showModal && (
+        <FoodModal closeModal={() => setShowModal(false)} food={foodClicked} />
+      )}
     </div>
   );
 };

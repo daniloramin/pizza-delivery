@@ -4,9 +4,10 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 
-  > a {
+  > button {
     position: relative;
     text-decoration: none;
+    border: none;
 
     .recommendation-results-items {
       display: flex;

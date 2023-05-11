@@ -5,8 +5,9 @@ export const ScrollBarFilters = ({ filterItems, checkItem }) => {
     <div id="recommendation-filter">
       {filterItems.map((item) => {
         return (
-          <button
+          <a
             key={item.id}
+            href={`#${item.filter}`}
             onClick={() => {
               checkItem(item);
             }}
@@ -14,7 +15,7 @@ export const ScrollBarFilters = ({ filterItems, checkItem }) => {
             disabled={item.checked ? true : false}
           >
             {item.filter}
-          </button>
+          </a>
         );
       })}
     </div>

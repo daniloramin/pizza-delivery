@@ -7,10 +7,15 @@ import { Title } from "../../Title";
 import { SubInfo } from "../../SubInfo";
 import { Price } from "../../Price";
 import { Evaluation } from "../../Evaluation";
+import { FoodModal } from "../../FoodModal";
+
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 
 export const RecommendationResults = () => {
   const { stores } = useOutletContext();
+  const [showModal, setShowModal] = useState(false);
+  const [foodClicked, setFoodClicked] = useState(null);
 
   return (
     <div id="recommendation-results">
@@ -18,7 +23,13 @@ export const RecommendationResults = () => {
         return store.products.map((product) => {
           return product.foods.map((pizza) => {
             return (
-              <a href="#" key={pizza.id}>
+              <button
+                onClick={() => {
+                  setFoodClicked(pizza);
+                  setShowModal(true);
+                }}
+                key={pizza.id}
+              >
                 <div className="recommendation-results-items">
                   <FaHeart
                     className="heart"
@@ -39,11 +50,15 @@ export const RecommendationResults = () => {
                   </div>
                   <Evaluation value={pizza.evaluation} />
                 </div>
-              </a>
+              </button>
             );
           });
         });
       })}
+
+      {showModal && (
+        <FoodModal closeModal={() => setShowModal(false)} food={foodClicked} />
+      )}
     </div>
   );
 };
