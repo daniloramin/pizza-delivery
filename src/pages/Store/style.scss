@@ -95,12 +95,18 @@
               flex-direction: column;
               gap: 8px;
 
+              width: 228px;
+
               > h3 {
                 font-size: 14px;
               }
 
-              > div.food-ingredients {
-                display: flex;
+              > span {
+                display: inline-block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                overflow: hidden;
               }
             }
           }

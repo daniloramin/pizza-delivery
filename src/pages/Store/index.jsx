@@ -13,79 +13,12 @@ import { useState } from "react";
 import { Price } from "../../components/Price";
 import { FoodModal } from "../../components/FoodModal";
 
-const dataPizzeria = [
-  {
-    id: 1,
-    filter: "Most Selling",
-    checked: true,
-    foods: [
-      {
-        id: 10001,
-        category: "Pizza",
-        name: "Greek Pizza",
-        cookingTime: "25 min",
-        kcal: "150 kcal",
-        evaluation: 4.8,
-        description: "Tasty and hot",
-        ingredients: ["Tomatoes", "Sausage", "Garlic", "Cheese"],
-        price: "14.90",
-      },
-      {
-        id: 10002,
-        category: "Pizza",
-        name: "Bacon Pizza",
-        cookingTime: "40 min",
-        kcal: "172 kcal",
-        evaluation: 5.0,
-        description: "Hot and tasty",
-        ingredients: ["Bacon", "Cheddar", "Onion", "Tomatoes"],
-        price: "21.99",
-      },
-    ],
-  },
-  {
-    id: 2,
-    filter: "New Items",
-    checked: false,
-    foods: [
-      // {
-      //   category: "",
-      //   name: "",
-      //   cookingTime: "",
-      //   kcal: "",
-      //   evaluation: "",
-      //   description: "",
-      //   ingredients: [""],
-      //   price: "",
-      // },
-    ],
-  },
-  {
-    id: 3,
-    filter: "Valuable Promotions",
-    checked: false,
-    foods: [
-      {
-        id: 10004,
-        category: "Pizza",
-        name: "Mediterranean Pizza",
-        cookingTime: "30 min",
-        kcal: "135 kcal",
-        evaluation: 4.9,
-        description: "Tasty",
-        ingredients: ["Mushroom", "Sausage", "Cheese", "Onion"],
-        price: "24.50",
-      },
-    ],
-  },
-];
-
 export const Store = () => {
   const { id } = useParams();
   const { getOne } = useStores();
   const [store] = getOne(id);
 
-  const [filters, setFilters] = useState(dataPizzeria);
+  const [filters, setFilters] = useState(store.products);
   const [showModal, setShowModal] = useState(false);
   const [foodClicked, setFoodClicked] = useState(null);
 
