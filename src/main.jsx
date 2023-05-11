@@ -10,11 +10,11 @@ import { Error } from "./pages/Error";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/pizza-delivery/",
     element: <Root />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "", element: <Home /> },
       { path: "track-delivery", element: <TrackDelivery /> },
       { path: "stores/:id", element: <Store /> },
     ],
