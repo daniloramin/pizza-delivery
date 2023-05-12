@@ -53,6 +53,7 @@
   }
 
   > div.order-filter {
+    width: 100%;
     > h2 {
       color: #413d3d;
       font-size: 16px;
@@ -63,12 +64,13 @@
     .order-filter-items {
       display: flex;
       gap: 14px;
+      overflow-x: auto;
 
       > div {
         background-color: #ffffff;
         border-radius: 14px;
-        width: 86px;
-        height: 86px;
+        min-width: 86px;
+        min-height: 86px;
         display: flex;
         flex-direction: column;
         justify-content: center;
