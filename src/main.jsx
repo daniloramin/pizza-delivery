@@ -8,18 +8,23 @@ import { TrackDelivery } from "./pages/TrackDelivery";
 import { Store } from "./pages/Store";
 import { Error } from "./pages/Error";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <Error />,
+      children: [
+        { path: "", element: <Home /> },
+        { path: "track-delivery", element: <TrackDelivery /> },
+        { path: "stores/:id", element: <Store /> },
+      ],
+    },
+  ],
   {
-    path: "/pizza-delivery/",
-    element: <Root />,
-    errorElement: <Error />,
-    children: [
-      { path: "", element: <Home /> },
-      { path: "track-delivery", element: <TrackDelivery /> },
-      { path: "stores/:id", element: <Store /> },
-    ],
-  },
-]);
+    basename: "/pizza-delivery",
+  }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
